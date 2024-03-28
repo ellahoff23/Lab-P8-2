@@ -22,13 +22,18 @@ int countWords(const string& str) {
 
 int main() {
 
-    string testStr1 = "Hello world";
-    string testStr2 = "This is a test string with multiple words";
-    string testStr3 = "   Only one word   ";
+    string userInput;
+    while (true) {
+        cout << "Enter a string pr Q to quit: ";
+        getline(cin, userInput);
 
-    cout << "Test string 1: \"" << testStr1 << "\", Word count: " << countWords(testStr1) << endl;
-    cout << "Test string 2: \"" << testStr2 << "\", Word count: " << countWords(testStr2) << endl;
-    cout << "Test string 3: \"" << testStr3 << "\", Word count: " << countWords(testStr3) << endl;
+        if (userInput == "Q") {
+            break;
+        }
+
+        int words = countWords(userInput);
+        cout << "\nWord count: " << words << endl;
+    }
 
     return 0;
 }
